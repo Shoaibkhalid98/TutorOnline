@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "SendFeedback";
+}
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary"></button>
+            </div>
+            <div class="img bg-wrap text-center py-4" style="background-image: url(../Content/sidebar/images/bg_1.jpg);">
+                <div class="user-logo">
+                    <div class="img" style="background-image: url(../Content/sidebar/images/logo.jpg);"></div>
+                    <h3>Catriona Henderson</h3>
+                </div>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="@Url.Action("ReceivedRequest", "Teacher")"><span class="fa fa-search mr-3"></span>Received Request</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("TeacherChatMessengerPage","ChatMessenger")"><span class="fa fa-comments mr-3 notif"><small class="d-flex align-items-center justify-content-center">*</small></span> Chat Messenger</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("AllStudentsOfATeacherListVideoCallPage","VideoCall")"><span class="fa fa-phone-square mr-3"></span> Video Call</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("ReceivedPayments","Payment")"><span class="fa fa-money mr-3"></span> Received Payments</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("SendFeedback","Teacher")"><span class="fa fa-commenting mr-3"></span> Give Feedback Or Report</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("ViewFeedback","Teacher")"><span class="fa fa-commenting mr-3"></span> View Feedback</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("UpdateProfile", "Teacher")"><span class="fa fa-pencil mr-3"></span> update Profile</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("TeacherChangePasswordPage", "ChangePassword")"><span class="fa fa-support mr-3"></span> Change Password</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Home")"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+
+        <div id="content" class="p-4 p-md-5 pt-5">
+
+            <!-- Users box-->
+            <div class="bg-gray px-4 py-2 bg-light">
+                <h2 class="mb-4">List Of Available Students</h2>
+            </div>
+
+            <div class="list-group rounded-0">
+
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                    <div class="media">
+                        <img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-4">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Send FeedBack">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Report">
+                                </small>
+                            </div>
+                            <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                    <div class="media">
+                        <img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-4">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Send FeedBack">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Report">
+                                </small>
+                            </div>
+                            <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                    <div class="media">
+                        <img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-4">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Send FeedBack">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Report">
+                                </small>
+                            </div>
+                            <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                    <div class="media">
+                        <img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-4">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Send FeedBack">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Report">
+                                </small>
+                            </div>
+                            <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                    <div class="media">
+                        <img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-4">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Send FeedBack">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Report">
+                                </small>
+                            </div>
+                            <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                    <div class="media">
+                        <img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-4">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Send FeedBack">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Report">
+                                </small>
+                            </div>
+                            <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light rounded-0">
+                    <div class="media">
+                        <img src="https://res.cloudinary.com/mhmd/image/upload/v1564960395/avatar_usae7z.svg" alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-4">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h6 class="mb-0">Jason Doe</h6><small class="small font-weight-bold">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Send FeedBack">
+                                    <input type="submit" class="search-submit btn btn-primary" value="Report">
+                                </small>
+                            </div>
+                            <p class="font-italic text-muted mb-0 text-small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+<script src="~/Content/sidebar/js/jquery.min.js"></script>
+<script src="~/Content/sidebar/js/popper.js"></script>
+<script src="~/Content/sidebar/js/bootstrap.min.js"></script>
+<script src="~/Content/sidebar/js/main.js"></script>
+
