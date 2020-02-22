@@ -28,5 +28,9 @@ namespace TutorOnline.web.Controllers
         {
             return View();
         }
+        public ActionResult TeacherCallerPage()
+        {
+            return View();
+        }
     }
 }

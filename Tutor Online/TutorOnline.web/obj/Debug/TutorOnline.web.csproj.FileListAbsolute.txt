@@ -72,7 +72,13 @@ D:\books of SE\FYP\Tutor Online\TutorOnline.web\bin\System.Web.WebPages.Razor.xm
 D:\books of SE\FYP\Tutor Online\TutorOnline.web\bin\Newtonsoft.Json.xml
 D:\books of SE\FYP\Tutor Online\TutorOnline.web\bin\Antlr3.Runtime.pdb
 D:\books of SE\FYP\Tutor Online\TutorOnline.web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\books of SE\FYP\Tutor Online\TutorOnline.web\obj\Debug\TutorOnline.web.csprojAssemblyReference.cache
 D:\books of SE\FYP\Tutor Online\TutorOnline.web\obj\Debug\TutorOnline.web.csproj.CopyComplete
 D:\books of SE\FYP\Tutor Online\TutorOnline.web\obj\Debug\TutorOnline.web.dll
 D:\books of SE\FYP\Tutor Online\TutorOnline.web\obj\Debug\TutorOnline.web.pdb
+D:\books of SE\FYP\Tutor Online\TutorOnline.web\bin\EntityFramework.dll
+D:\books of SE\FYP\Tutor Online\TutorOnline.web\bin\EntityFramework.SqlServer.dll
+D:\books of SE\FYP\Tutor Online\TutorOnline.web\bin\EntityFramework.xml
+D:\books of SE\FYP\Tutor Online\TutorOnline.web\bin\EntityFramework.SqlServer.xml
+D:\books of SE\FYP\Tutor Online\TutorOnline.web\obj\Debug\TutorOnline.web.Migrations.initialized.resources
+D:\books of SE\FYP\Tutor Online\TutorOnline.web\obj\Debug\TutorOnline.web.csproj.GenerateResource.cache
+D:\books of SE\FYP\Tutor Online\TutorOnline.web\obj\Debug\TutorOnline.web.Migrations.addlogintable.resources

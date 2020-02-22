@@ -3,35 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TutorOnline.Entities;
+using TutorOnline.web.TutorOnline.Entities;
+using TutorOnline.web.TutorOnline.Services;
+using TutorOnline.web.ViewModels;
 
 namespace TutorOnline.web.Controllers
 {
     public class LoginController : Controller
     {
         [HttpPost]
-        public ActionResult Login(string Email, string Password)
+        //[ValidateAntiForgeryToken]
+        public ActionResult Login(Login user)
         {
-            if (Email.Equals("Admin@admin.com") && Password.Equals("464566007"))
+            LoginViewModel model = new LoginViewModel();
+            if (user.Email.Equals("Admin@admin.com") && user.Password.Equals("464566007"))
             {
-                return Redirect(@Url.Action("Dashboard","Admin"));
+                model.type = "Admin";
+                return RedirectToAction("Dashboard","Admin");
             }
-            else if (Email.Equals("Student@student.com") && Password.Equals("464566007"))
+            var student = StudentServices.Instance.GetStudent(user.Email, user.Password);
+            
+            if (student!= null && user.Email.Equals(student.Email) && user.Password.Equals(student.Password))
             {
-                return Redirect(@Url.Action("Dashboard", "Student"));
+                model.type = "Student";
+                model.student = student;
+                return RedirectToAction(@Url.Action("Dashboard", "Student"));
             }
-            else if (Email.Equals("Teacher@teacher.com") && Password.Equals("464566007"))
+            var teacher = TeacherServices.Instance.GetTeacher(user.Email, user.Password);
+
+            if (teacher != null && user.Email.Equals(teacher.Email) && user.Password.Equals(teacher.Password))
             {
-                return Redirect(@Url.Action("Dashboard", "Teacher"));
+                model.type = "Teacher";
+                model.teacher = teacher;
+                return RedirectToAction(@Url.Action("Dashboard", "Teacher"));
             }
-            else
-            {
-                return HttpNotFound();
-            }
+            return View(model);
         }
         [HttpGet]
         public ActionResult Login()
         {
-            return View();
+            return View(new LoginViewModel());
         }
     }
 }

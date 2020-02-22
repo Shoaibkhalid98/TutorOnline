@@ -1,7 +1,15 @@
-﻿
+﻿@model TutorOnline.web.ViewModels.LoginViewModel
 @{
     ViewBag.Title = "Login";
 }
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+@*
+    <script src="~/Content/javascript/jquery.min.js"></script>
+    <script src="~/Content/javascript/jquery.cookie.js"></script>
+*@
 
 <header role="banner">
 
@@ -47,11 +55,6 @@
 </header>
 <!-- END header -->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-<script src="~/Content/javascript/jquery.cookie.js"></script>
-<script src="~/Content/javascript/jquery.min.js"></script>
 
 <section class="site-hero site-sm-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(../Content/images/big_image_2.jpg);">
     <div class="container">
@@ -76,16 +79,17 @@
                 <div class="form-wrap">
                     <h2 class="mb-4">Log in with your account</h2>
                     <form id="checkUser" method="post">
+                        <input type="hidden" id="UserType" name="UserType" value="@Model.type" />
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <label for="name">Username</label>
-                                <input type="text" id="Email" class="form-control py-2">
+                                <input type="text" id="Email" name="Email" class="form-control py-2">
                             </div>
                         </div>
                         <div class="row mb-5">
                             <div class="col-md-12 form-group">
                                 <label for="name">Password</label>
-                                <input type="password" id="Password" class="form-control py-2">
+                                <input type="password" id="Password" name="Password" class="form-control py-2">
                             </div>
                         </div>
 
@@ -106,10 +110,11 @@
     $("#loginBtn").click(function () {
         $.ajax({
                 type:'POST',
-                url: '@Url.Action("Dashboard","Admin")',
+                url: '@Url.Action("Login","Login")',
                 data: $("#checkUser").serialize()
             })
-            .done(function (response) {
+            .done(function (response)
+            {
                     swal({
                         title: "Successfull",
                         text: "LogIn Successfull",
@@ -117,18 +122,21 @@
                         buttons: true,
                         dangerMode: true,
                     });
-                @*var Email = [];
+                /*var Email = [];
                 Email.push($("#Email").val());
-                $.cookie('UserOnline', Email.join('-'), { path: '/' });*@
-                if ($("#Email").val() === "Admin@admin.com" && $("#Password").val() === "464566007")
+                $.cookie('UserOnline', Email.join('-'), { path: '/' });*/
+                if ($("#UserType").val() === "Admin")
+                    window.location.href = "@Url.Action("Dashboard","Admin")";
+
+                if ($("#UserType").val() === "Admin@admin.com" && $("#Password").val() === "464566007")
                 {
                     window.location.href = "@Url.Action("Dashboard","Admin")";
                 }
-                else if ($("#Email").val() === "Student@student.com" && $("#Password").val() === "464566007")
+                else if ($("#UserType").val() === "Student")
                 {
                      window.location.href = "@Url.Action("Dashboard","Student")";
                 }
-                else if ($("#Email").val() === "Teacher@teacher.com" && $("#Password").val() === "464566007")
+                else if ($("#UserType").val() === "Teacher")
                 {
                      window.location.href = "@Url.Action("Dashboard","Teacher")";
                 }
