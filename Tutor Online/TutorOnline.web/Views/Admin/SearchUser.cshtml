@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "SearchUser";
+}
+
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary"></button>
+            </div>
+            <div class="img bg-wrap text-center py-4" style="background-image: url(../Content/sidebar/images/bg_1.jpg);">
+                <div class="user-logo">
+                    <div class="img" style="background-image: url(../Content/sidebar/images/logo.jpg);"></div>
+                    <h3>Admin@admin.com</h3>
+                </div>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="@Url.Action("SearchUser", "Admin")"><span class="fa fa-search mr-3"></span> Search A User</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("ShowListOfUsers", "Admin")"><span class="fa fa-comments mr-3 notif"><small class="d-flex align-items-center justify-content-center">*</small></span>See All User</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("VerifyTeacher", "Admin")"><span class="fa fa-phone-square mr-3"></span>Verify Teacher</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("CheckReport", "Admin")"><span class="fa fa-money mr-3"></span>Check Report</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("UpdateProfile", "Admin")"><span class="fa fa-pencil mr-3"></span> update Profile</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("AdminChangePasswordPage", "ChangePassword")"><span class="fa fa-support mr-3"></span> Change Password</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("Index","Home")"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(../Content/images/big_image_2.jpg);">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center site-hero-inner">
+                        <div class="col-md-10">
+                            <div class="mb-5 element-animate">
+                                <div class="block-17">
+                                    <h2 class="heading text-center mb-4">Find Oneline Teacher That Suits You</h2>
+                                    <form action="#" method="#" class="d-block d-lg-flex mb-4">
+                                        <div class="fields d-block d-lg-flex">
+                                            <div class="textfield-search one-third"><input type="text" class="form-control" placeholder="Enter Name..."></div>
+                                        </div>
+                                        <a href="@Url.Action("ShowListOfUsers", "Admin")" class="search-submit btn btn-primary">Search</a>
+                                    </form>
+                                    <p class="text-center mb-5">We have best tutors to improve your skills</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- END section -->
+        </div>
+    </div>
+
+<script src="~/Content/sidebar/js/jquery.min.js"></script>
+<script src="~/Content/sidebar/js/popper.js"></script>
+<script src="~/Content/sidebar/js/bootstrap.min.js"></script>
+<script src="~/Content/sidebar/js/main.js"></script>
+

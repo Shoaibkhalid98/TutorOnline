@@ -1,0 +1,266 @@
+﻿@model TutorOnline.web.ViewModels.RegisterStudentViewModel
+@{
+    ViewBag.Title = "RegisterStudent";
+    var imageUrl = "/Content/images/placeholder.png";
+}
+    <script src="~/Content/js/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<header role="banner">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand absolute" href="index.html">Tutor Online</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="@Url.Action("Index","Home")">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="courses.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Register</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="@Url.Action("RegisterStudent","Register")">Register As Student</a>
+                            <a class="dropdown-item" href="@Url.Action("RegisterTeacher","Register")">Register As Teacher</a>
+                        </div>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Dashboard","Student")">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("About","Home")">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Contact","Home")">Contact</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav absolute-right">
+                    <li>
+                        <a href="@Url.Action("Login","Login")">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- END header -->
+
+<section class="site-hero site-sm-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(../Content/images/big_image_2.jpg);">
+    <div class="container">
+        <div class="row align-items-center justify-content-center site-hero-sm-inner">
+            <div class="col-md-7 text-center">
+
+                <div class="mb-5 element-animate">
+                    <h1 class="mb-2">Register Student</h1>
+                    <p class="bcrumb"><a href="@Url.Action("Index","Home")">Home</a> <span class="sep ion-android-arrow-dropright px-2"></span>  <span class="current">Register Student</span></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END section -->
+
+<section class="site-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <div class="form-wrap">
+                    <h2 class="mb-5">Register new Student account</h2>
+                    <form id="CreateUser" action="#" method="post">
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="Name" class="form-control py-2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="name">Email Address</label>
+                                <input type="text" id="Email" name="Email" class="form-control py-2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="name">Password</label>
+                                <input type="password" id="Password" name="Password" class="form-control py-2 ">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="name">Adress</label>
+                                <input type="text" id="Adress" name="Adress" class="form-control py-2 ">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="name">TelePhone#</label>
+                                <input type="text" id="phone" name="phone" class="form-control py-2 ">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <label for="name">Description</label>
+                                <input type="text" id="Description" name="Description" class="form-control py-2 ">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 form-group">
+                                <label for="name">Upload Image</label>
+                                <input id="imageUrl" name="imageUrl" alt="@imageUrl" type="hidden" />
+                                <input id="imageUpload" name="imageUrl" type="file" accept=".png , .jpg" class="form-control py-2 " />
+                            </div>
+                            <div class="col-md-4">
+                                <div class="thumb">
+                                    <img src="@imageUrl" name="imageUrl" class="img-thumbnail img-fluid" id="ProfileImage" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                                <input type="hidden" id="userType" name="userType" value="Student" class="form-control py-2 ">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input id="saveBtn" type="button" value="Register" class="btn btn-primary px-5 py-2">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    $("#imageUpload").change(function () {
+        var element = this;
+        var formData = new FormData();
+        var totalFiles = element.files.length;
+        for (var i = 0; i < totalFiles; i++) {
+            var file = element.files[i];
+            formData.append("Photo", file);
+        }
+
+        $.ajax({
+            type: 'POST',
+            url:'@Url.Action("UploadImage","Shared")',// '/Shared/UploadImage',
+            dataType: 'json',
+            data: formData,
+            contentType: false,
+            processData: false
+
+        })
+            .done(function (response) {
+                if (response.Success == true) {
+                    $("#imageUrl").val(response.imageUrl);
+                    $("#ProfileImage").attr("src", response.imageUrl);
+
+                }
+            })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("Fail");
+            });
+    });
+
+    $('#CreateUser').validate({
+        rules: {
+            Name: {
+                required: true,
+                minlength: 5,
+                maxlength:50
+            },
+            Email: {
+                 required: true
+            },
+            Password: {
+                 required: true
+            },
+            Adress: {
+                 required: true
+            },
+            phone: {
+                 required: true
+            },
+            imageUrl: {
+                 required: true
+            },
+            Description: {
+                maxlength:500
+            }
+        },
+        messages: {
+            Name: {
+                required: 'Name is Required',
+                minlength: 'Minimum Length is 5',
+                maxlength:'Maximum Length is 50'
+            },
+            Email: {
+                 required: 'Email is Required'
+            },
+            Password: {
+                 required: 'Password is Required'
+            },
+            Adress: {
+                 required: 'Adress is Required'
+            },
+            phone: {
+                 required: 'phone is Required'
+            },
+            imageUrl: {
+                 required: 'Image is Required'
+            },
+            Description: {
+                maxlength:'Maximum Length is 500'
+            }
+        }
+    });
+
+
+    $("#saveBtn").click(function () {
+        if ($("#CreateUser").valid()) {
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("RegisterStudent","Register")',//'/Category/Create',
+                data: $("#CreateUser").serialize()
+            })
+                .done(function (response) {
+                    swal({
+                        title: "Successfull",
+                        text: "Registeration Successfull",
+                        icon: "success",
+                        buttons: true,
+                        dangerMode: true,
+                    });
+
+                     window.location.href = "@Url.Action("Index","Home")";
+                })
+                .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                    swal({
+                        title: "Warning",
+                        text: "Please Enter All Valid Data in Fields.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    });
+                });
+        }
+        else
+        {
+            swal({
+                        title: "Warning",
+                        text: "Please Enter All Valid Data in Fields.",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    });
+        }
+    });
+
+</script>
