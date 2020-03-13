@@ -95,8 +95,9 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12 form-group">
-                                <label for="name">Adress</label>
+                                <label for="name">Address</label>
                                 <input type="text" id="Adress" name="Adress" class="form-control py-2 ">
+                                @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
                             </div>
                         </div>
                         <div class="row">
@@ -220,7 +221,7 @@
         rules: {
             Name: {
                 required: true,
-                minlength: 5,
+                minlength: 2,
                 maxlength:50
             },
             Email: {
@@ -245,8 +246,9 @@
         messages: {
             Name: {
                 required: 'Name is Required',
-                minlength: 'Minimum Length is 5',
-                maxlength:'Maximum Length is 50'
+                minlength: 'Name is too short'
+                maxlength: 'Maximum Length is 50'
+               
             },
             Email: {
                  required: 'Email is Required'
@@ -255,7 +257,7 @@
                  required: 'Password is Required'
             },
             Adress: {
-                 required: 'Adress is Required'
+                 required: 'Address is Required'
             },
             phone: {
                  required: 'phone is Required'
@@ -266,7 +268,9 @@
             Description: {
                 maxlength:'Maximum Length is 500'
             }
+
         }
+
     });
 
 
