@@ -16,21 +16,24 @@ namespace TutorOnline.web.Controllers
         //[ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel model)
         {
-            var login = LoginServices.Instance.GetLogin(model.Email, model.Password);
-            if (login.userType.Equals("Admin"))
+            var user = LoginServices.Instance.GetUser(model.Email);
+            if (System.Web.Helpers.Crypto.VerifyHashedPassword(user.Password, model.Password))
             {
-                model.UserType = "Admin";
-                return RedirectToAction("Dashboard", "Admin");
-            }
-            else if (login.userType.Equals("Student"))
-            {
-                model.UserType = "Student";
-                return RedirectToAction("Dashboard", "Student");
-            }
-            else if (login.userType.Equals("Teacher"))
-            {
-                model.UserType = "Teacher";
-                return RedirectToAction("Dashboard", "Teacher");
+                if (user.userType.Equals("Admin"))
+                {
+                    model.UserType = "Admin";
+                    return RedirectToAction("Dashboard", "Admin");
+                }
+                else if (user.userType.Equals("Student"))
+                {
+                    model.UserType = "Student";
+                    return RedirectToAction("Dashboard", "Student");
+                }
+                else if (user.userType.Equals("Teacher"))
+                {
+                    model.UserType = "Teacher";
+                    return RedirectToAction("Dashboard", "Teacher");
+                }
             }
             return View(model);
         }

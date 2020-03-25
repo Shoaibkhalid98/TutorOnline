@@ -97,7 +97,7 @@
                             <div class="col-md-12 form-group">
                                 <label for="name">Address</label>
                                 <input type="text" id="Adress" name="Adress" class="form-control py-2 ">
-                                @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
+                               
                             </div>
                         </div>
                         <div class="row">
@@ -246,7 +246,7 @@
         messages: {
             Name: {
                 required: 'Name is Required',
-                minlength: 'Name is too short'
+                minlength: 'Name is too short',
                 maxlength: 'Maximum Length is 50'
                
             },

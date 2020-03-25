@@ -18,6 +18,7 @@ namespace TutorOnline.web.Controllers
         {
             if (ModelState.IsValid)
             {
+                var hashPass = System.Web.Helpers.Crypto.HashPassword(model.Password);
                 //extract data from model to login table
                 var login = new Login();
                 login.Adress = model.Adress;
@@ -25,7 +26,7 @@ namespace TutorOnline.web.Controllers
                 login.Email = model.Email;
                 login.imageUrl = model.imageUrl;
                 login.Name = model.Name;
-                login.Password = model.Password;
+                login.Password = hashPass;
                 login.phone = model.phone;
                 login.userType = model.userType;
                 //extract data from model to Student table
@@ -35,7 +36,7 @@ namespace TutorOnline.web.Controllers
                 student.Email = login.Email;
                 student.imageUrl = login.imageUrl;
                 student.Name = login.Name;
-                student.Password = login.Password;
+                student.Password = hashPass;
                 student.phone = login.phone;
                 LoginServices.Instance.SaveLogin(login);
                 StudentServices.Instance.SaveStudent(student);
@@ -54,6 +55,7 @@ namespace TutorOnline.web.Controllers
         {
             if (ModelState.IsValid)
             {
+                var hashPass = System.Web.Helpers.Crypto.HashPassword(model.Password);
                 //extract data from model to login table
                 var login = new Login();
                 login.Adress = model.Adress;
@@ -61,7 +63,7 @@ namespace TutorOnline.web.Controllers
                 login.Email = model.Email;
                 login.imageUrl = model.imageUrl;
                 login.Name = model.Name;
-                login.Password = model.Password;
+                login.Password = hashPass;
                 login.phone = model.phone;
                 login.userType = model.userType;
 
@@ -72,7 +74,7 @@ namespace TutorOnline.web.Controllers
                 teacher.Email = model.Email;
                 teacher.imageUrl = model.imageUrl;
                 teacher.Name = model.Name;
-                teacher.Password = model.Password;
+                teacher.Password = hashPass;
                 teacher.phone = model.phone;
                 teacher.DegreeImageUrl = model.DegreeImageUrl;
                 teacher.currentAccountStatus = "UnVerified";

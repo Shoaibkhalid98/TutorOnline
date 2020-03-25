@@ -34,12 +34,12 @@ namespace TutorOnline.web.TutorOnline.Services
                 context.SaveChanges();
             }
         }
-        public Login GetLogin(string email, string password)
+        public Login GetUser(string email)
         {
             var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
             using (var context = new TOContext())
             {
-                return context.login.Where(x => x.Email == email && x.Password == password).FirstOrDefault(); ;
+                return context.login.Where(x => x.Email == email ).FirstOrDefault(); ;
             }
         }
     }

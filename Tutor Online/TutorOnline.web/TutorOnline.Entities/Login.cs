@@ -25,5 +25,6 @@ namespace TutorOnline.web.TutorOnline.Entities
         public String Description { get; set; }
         public String imageUrl { get; set; }
         public String userType { get; set; }
+       // public bool emailVerified { get; set; }
     }
 }
